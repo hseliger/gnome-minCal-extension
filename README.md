@@ -1,8 +1,10 @@
-# gnome-minCal3-extension
+# gnome-minCal-extension
 
 ## Description
 
-This extension will remove event list and clock/calendar app buttons from the calendar window for Gnome 3. This is just an updated version of v2 by breiq. This is committed and available via the Gnome 3 Extensions page.
+This extension will remove event list and clock/calendar app buttons from the calendar window for Gnome 45 onwards.
 
-![screenshot](minCal3.png)
+This is just an updated version of v2 by breiq and of v3 by mtharpe.
+
+![screenshot](minCal.png)
 

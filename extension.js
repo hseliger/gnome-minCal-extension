@@ -1,27 +1,26 @@
-const Main = imports.ui.main;
-const Calendar = imports.ui.calendar;
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import * as Calendar from 'resource:///org/gnome/shell/ui/calendar.js';
+//import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 
-function init()
-{
-	//
-}
+export default class MiniCalExtension { //extends Extension {
 
-function enable()
-{
-	let eventSource = new Calendar.EmptyEventSource();
-	Main.panel.statusArea.dateMenu._setEventSource(eventSource);
-}
-
-function disable()
-{
-	let eventSource;
-	let showEvents = Main.sessionMode.showCalendarEvents;
-	if (showEvents)
+	enable()
 	{
-		eventSource = new Calendar.DBusEventSource();
-	} else
-	{
-		eventSource = new Calendar.EmptyEventSource();
+		let eventSource = new Calendar.EmptyEventSource();
+		Main.panel.statusArea.dateMenu._setEventSource(eventSource);
 	}
-	Main.panel.statusArea.dateMenu._setEventSource(eventSource);
+
+	disable()
+	{
+		let eventSource;
+		let showEvents = Main.sessionMode.showCalendarEvents;
+		if (showEvents)
+		{
+			eventSource = new Calendar.DBusEventSource();
+		} else
+		{
+			eventSource = new Calendar.EmptyEventSource();
+		}
+		Main.panel.statusArea.dateMenu._setEventSource(eventSource);
+	}
 }
